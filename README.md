@@ -71,15 +71,15 @@ Authorization: Token <token>
 ------------------------------------------------------------------------
 
 ## 📌 API Endpoints
+| Method | URL                     | Tavsif               |
+|------=--|--------------------------|------------------------------|
+| GET     | `/api/todos/`            | Barcha todo larni olish      |
+| POST    | `/api/todos/`             | Yangi todo yaratish          |
+| GET     | `/api/todos/<id>/`         | Bitta todo olish             |
+| PUT     | `/api/todos/<id>/`         | To'liq yangilash             |
+| PATCH   | `/api/todos/<id>/`        | Qisman yangilash             |
+| DELETE  | `/api/todos/<id>/`         | O'chirish                    |
 
-  Method   URL                  Tavsif
-  -------- -------------------- -------------------------
-  GET      `/api/todos/`        Barcha todo larni olish
-  POST     `/api/todos/`        Yangi todo yaratish
-  GET      `/api/todos/<id>/`   Bitta todo olish
-  PUT      `/api/todos/<id>/`   To'liq yangilash
-  PATCH    `/api/todos/<id>/`   Qisman yangilash
-  DELETE   `/api/todos/<id>/`   O'chirish
 
 ------------------------------------------------------------------------
 
