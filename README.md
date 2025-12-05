@@ -1,10 +1,10 @@
-# Todo_List_API
-# 📝 Todo List API -- Django REST Framework
+# 📝 Todo List API — Django REST Framework
 
-Todo List API --- Django REST Framework asosida yaratilgan CRUD
-funksionallikka ega backend xizmati.\
-U orqali vazifalarni yaratish, ko'rish, tahrirlash va o'chirish mumkin.
+Todo List API — Django REST Framework asosida ishlab chiqilgan, **Token Based Authentication** qo'llanilgan, CRUD funksionallikka ega backend xizmati.
 
+Foydalanuvchilar avval ro‘yxatdan o‘tishi yoki login qilishi kerak. Har bir foydalanuvchi o‘zining todo ro‘yxatini boshqaradi.
+
+---
 ------------------------------------------------------------------------
 
 ## 🚀 Texnologiyalar
@@ -54,6 +54,21 @@ python manage.py runserver
 API:
 
     http://127.0.0.1:8000/api/
+------------------------------------------------------------------------
+🔐 Authentication (Token Based)
+
+Login yoki Registratsiyadan so‘ng foydalanuvchi Token oladi.
+Har bir so‘rovga quyidagicha header qo‘shish shart:
+
+    Authorization: Token <token>
+
+🔑 Auth API Endpoints
+
+| Method | URL                   | Tavsif               |
+| ------ | --------------------- | -------------------- |
+| POST   | `/api/auth/register/` | Ro‘yxatdan o‘tish    |
+| POST   | `/api/auth/login/`    | Login va Token olish |
+| POST   | `/api/auth/logout/`   | Tokenni bekor qilish |
 
 ------------------------------------------------------------------------
 
@@ -117,22 +132,31 @@ urlpatterns = [
 
 ## 📂 Loyihalar Strukturasi
 
-    todo_api/
-    │── manage.py
-    │── requirements.txt
-    │── README.md
-    │
-    ├── todo/
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── admin.py
-    │
-    └── config/
-        ├── settings.py
-        ├── urls.py
-        └── wsgi.py
+todo_api/
+│
+├── manage.py
+├── requirements.txt
+│
+├── accounts/                    # Auth (Register + Login + Token)
+│   ├── __init__.py
+│   ├── models.py (ixtiyoriy)
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── tests.py
+│
+├── todos/                       # Todo CRUD API
+│   ├── __init__.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── tests.py
+│
+└── utils/                       # umumiy funksiyalar (ixtiyoriy)
+    ├── __init__.py
+    └── permissions.py
+
 
 ------------------------------------------------------------------------
 
