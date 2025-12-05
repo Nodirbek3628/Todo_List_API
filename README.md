@@ -132,30 +132,30 @@ urlpatterns = [
 
 ## 📂 Loyihalar Strukturasi
 
-todo_api/
-│
-├── manage.py
-├── requirements.txt
-│
-├── accounts/                    # Auth (Register + Login + Token)
-│   ├── __init__.py
-│   ├── models.py (ixtiyoriy)
-│   ├── serializers.py
-│   ├── views.py
-│   ├── urls.py
-│   └── tests.py
-│
-├── todos/                       # Todo CRUD API
-│   ├── __init__.py
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   ├── urls.py
-│   └── tests.py
-│
-└── utils/                       # umumiy funksiyalar (ixtiyoriy)
-    ├── __init__.py
-    └── permissions.py
+    todo_api/
+    │
+    ├── manage.py
+    ├── requirements.txt
+    │
+    ├── accounts/                    # Auth (Register + Login + Token)
+    │   ├── __init__.py
+    │   ├── models.py (ixtiyoriy)
+    │   ├── serializers.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── tests.py
+    │
+    ├── todos/                       # Todo CRUD API
+    │   ├── __init__.py
+    │   ├── models.py
+    │   ├── serializers.py
+    │   ├── views.py
+    │   ├── urls.py
+    │   └── tests.py
+    │
+    └── utils/                       # umumiy funksiyalar (ixtiyoriy)
+        ├── __init__.py
+        └── permissions.py
 
 
 ------------------------------------------------------------------------
