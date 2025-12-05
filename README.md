@@ -4,16 +4,14 @@ Todo List API — Django REST Framework asosida ishlab chiqilgan, **Token Based 
 
 Foydalanuvchilar avval ro‘yxatdan o‘tishi yoki login qilishi kerak. Har bir foydalanuvchi o‘zining todo ro‘yxatini boshqaradi.
 
----
-------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 ## 🚀 Texnologiyalar
 
--   Python 3.x
--   Django 4.x
--   Django REST Framework
--   SQLite / PostgreSQL
-
+-Python 3.x
+-Django 4.x
+-Django REST Framework
+-SQLite / PostgreSQL
 ------------------------------------------------------------------------
 
 ## 📦 O'rnatish
@@ -53,16 +51,16 @@ python manage.py runserver
 
 API:
 
-    http://127.0.0.1:8000/api/
+http://127.0.0.1:8000/api/
 ------------------------------------------------------------------------
 🔐 Authentication (Token Based)
 
 Login yoki Registratsiyadan so‘ng foydalanuvchi Token oladi.
 Har bir so‘rovga quyidagicha header qo‘shish shart:
 
-    Authorization: Token <token>
+Authorization: Token <token>
 
-🔑 Auth API Endpoints
+🔑Auth API Endpoints
 
 | Method | URL                   | Tavsif               |
 | ------ | --------------------- | -------------------- |
@@ -116,50 +114,3 @@ class TodoSerializer(serializers.ModelSerializer):
 
 ------------------------------------------------------------------------
 
-## 🛣 URL Config (urls.py)
-
-### project/urls.py
-
-``` python
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('todo.urls')),
-]
-```
-
-## 📂 Loyihalar Strukturasi
-
-    todo_api/
-    │
-    ├── manage.py
-    ├── requirements.txt
-    │
-    ├── accounts/                    # Auth (Register + Login + Token)
-    │   ├── __init__.py
-    │   ├── models.py (ixtiyoriy)
-    │   ├── serializers.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── tests.py
-    │
-    ├── todos/                       # Todo CRUD API
-    │   ├── __init__.py
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── views.py
-    │   ├── urls.py
-    │   └── tests.py
-    │
-    └── utils/                       # umumiy funksiyalar (ixtiyoriy)
-        ├── __init__.py
-        └── permissions.py
-
-
-------------------------------------------------------------------------
-
-## 📄 License
-
-MIT License
