@@ -1,7 +1,16 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 
-User = get_user_model()
+
+class CustomUser(AbstractUser):
+    ROLES = [
+        ['ADMIN','Admin'],
+        ['USER','User'],
+        ['MANAGER','Manager']
+    ]
+
+    roles = models.CharField(choices=ROLES,default='USER')
 
 class Category(models.Model):
     name = models.CharField(max_length=128,unique=True)
@@ -21,7 +30,7 @@ class Task(models.Model):
     status = models.BooleanField(default=False)
     due_date = models.DateTimeField(blank=True,null=True)
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
-    user = models.ForeignKey(User,on_delete=models.CASCADE,)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -32,4 +41,5 @@ class Task(models.Model):
     
     def __repr__(self):
         return self.name
+    
 
